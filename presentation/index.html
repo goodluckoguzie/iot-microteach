@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Introduction to IoT: Building a Smart Home Security System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- Reveal.js Core CSS and JS (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/white.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/monokai.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/notes/notes.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/markdown/markdown.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/math/math.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="mycss.css" />
+  <!-- Google Fonts: Ubuntu -->
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Force Ubuntu Font */
+    .reveal {
+      font-family: 'Ubuntu', sans-serif !important;
+    }
+
+    .reveal h1,
+    .reveal h2,
+    .reveal h3,
+    .reveal h4,
+    .reveal h5,
+    .reveal h6 {
+      font-family: 'Ubuntu', sans-serif !important;
+      text-transform: none;
+      /* Keep original casing preference */
+    }
+  </style>
+
+  <script type="text/javascript">
+    window.addEventListener("load", function () {
+      var revealDiv = document.querySelector("body div.reveal");
+      var footer = document.querySelector(".footer");
+      if (footer) revealDiv.appendChild(footer);
+    });
+  </script>
+
+  <style>
+    /* Slide number styling */
+    .reveal .slide-number {
+      font-size: 20pt;
+      color: #fff;
+    }
+
+    video::-webkit-media-controls-panel {
+      background-image: linear-gradient(transparent, transparent) !important;
+    }
+
+    .reveal section div ul li span {
+      line-height: 1.2;
+    }
+
+    .fragment.fade-in {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .fragment.fade-in.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .fragment.slide-in {
+      transform: translateY(100%);
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .fragment.slide-in.visible {
+      transform: translateY(0);
+    }
+
+    /* Text block styling – no background */
+    .textBlock {
+      margin: 0 auto;
+      line-height: 1.5;
+      padding: 15px;
+      border-radius: 5px;
+      display: inline-block;
+      max-width: 80%;
+      text-align: center;
+    }
+
+    /* Section title styling */
+    .section-title {
+      color: white;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Final link styling */
+    .final-link {
+      font-size: 1.2em;
+      color: #00A9D4;
+      text-decoration: none;
+      margin-top: 20px;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- Slide 1: Title Slide -->
+      <section data-background-color="#01404f">
+        <div style="position: absolute; top: 20px; right: 20px;">
+          <img src="img/qa_img.jpg" style="width: 150px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
+        </div>
+        <div style="text-align: center; margin-top: 150px;">
+          <h2 style="color: white; line-height: 1.3;">
+            Introduction to IoT:<br>
+            Building a Smart Home<br>
+            Security System
+          </h2>
+          <h3 style="color: white; margin-top: 40px;">
+            <span style="font-size: 0.9em;">Presenter: <strong>Dr. Goodluck Oguzie</strong></span><br>
+            <span style="font-size: 0.8em;">goguzie@qa.com</span><br><br>
+            <span style="font-size: 0.75em;">Micro-Teach Session</span><br>
+            <span style="font-size: 0.75em;">Interview Presentation | December 2025</span>
+          </h3>
+        </div>
+      </section>
+
+
+
+
+      <!-- Slide 2: Learning Objectives -->
+      <section data-background-color="#01404f">
+        <h2 style="color: white; text-align: center; margin-top: 50px;">Learning Objectives</h2>
+        <div style="color: white; font-size: 1.3em; font-weight: 400; padding-top: 30px; margin: 0 auto; width: 85%;">
+          <p style="text-align: left; margin-bottom: 30px;">By the end of this session, students will be able to:</p>
+          <ol style="line-height: 1.6;">
+            <li class="fragment fade-left" style="margin-bottom: 25px;"><strong>Define</strong> the basic concept of
+              Internet of
+              Things (IoT).</li>
+            <li class="fragment fade-left" style="margin-bottom: 25px;"><strong>Identify</strong> the components of a
+              simple
+              sensor circuit.</li>
+            <li class="fragment fade-left" style="margin-bottom: 25px;"><strong>Construct</strong> a motion-detection
+              logic using
+              an Arduino microcontroller.</li>
+          </ol>
+        </div>
+      </section>
+
+
+
+      <!-- ========================================= -->
+      <!-- 2. CONTEXT & SCOPE & APPROACHES            -->
+      <!-- ========================================= -->
+
+      <!-- Slide 3: What is IoT? -->
+      <section data-background-color="#01404f">
+        <h2 style="color: white; text-align: center;">What is IoT?</h2>
+
+        <!-- Definition Block -->
+        <div style="color: white; text-align: center; padding-top: 20px;">
+          <p style="font-size: 1.1em; font-weight: 400;">
+            The network of physical objects ("things") embedded with sensors and software to connect and exchange data.
+          </p>
+        </div>
+
+        <!-- Interactive Question Box -->
+        <div class="fragment fade-left"
+          style="background: rgba(255,255,255,0.1); border-left: 5px solid #00A9D4; padding: 15px; margin: 30px auto; width: 80%; text-align: left;">
+          <p style="margin: 0; font-size: 1em; color: white;"><strong>❓ Ask Audience:</strong> "What IoT devices do you
+            use in your daily life?"</p>
+        </div>
+
+        <!-- 3 Pillars Layout with Placeholders -->
+        <div style="display: flex; justify-content: space-around; margin-top: 40px; text-align: center;">
+
+          <!-- Column 1: Sensors -->
+          <div class="fragment fade-left" style="flex: 1;">
+            <div
+              style="width: 100px; height: 100px; background: rgba(255,255,255,0.15); margin: 0 auto; border: 1px dashed rgba(255,255,255,0.5); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <span style="font-size: 0.8em; color: #ddd;">(Img: Sensor)</span>
+            </div>
+            <p style="margin-top: 15px; font-weight: bold; color: #00A9D4;">Sensors</p>
+            <p style="font-size: 0.8em; line-height: 1.4;">"The Eyes"<br><span style="opacity: 0.8;">(e.g., Motion,
+                Heat)</span></p>
+          </div>
+
+          <!-- Column 2: Connectivity -->
+          <div class="fragment fade-left" style="flex: 1;">
+            <div
+              style="width: 100px; height: 100px; background: rgba(255,255,255,0.15); margin: 0 auto; border: 1px dashed rgba(255,255,255,0.5); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <span style="font-size: 0.8em; color: #ddd;">(Img: Wi-Fi)</span>
+            </div>
+            <p style="margin-top: 15px; font-weight: bold; color: #00A9D4;">Connectivity</p>
+            <p style="font-size: 0.8em; line-height: 1.4;">"The Transport"<br><span style="opacity: 0.8;">(e.g., Wi-Fi,
+                Bluetooth)</span></p>
+          </div>
+
+          <!-- Column 3: Processing -->
+          <div class="fragment fade-left" style="flex: 1;">
+            <div
+              style="width: 100px; height: 100px; background: rgba(255,255,255,0.15); margin: 0 auto; border: 1px dashed rgba(255,255,255,0.5); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <span style="font-size: 0.8em; color: #ddd;">(Img: Chip)</span>
+            </div>
+            <p style="margin-top: 15px; font-weight: bold; color: #00A9D4;">Processing</p>
+            <p style="font-size: 0.8em; line-height: 1.4;">"The Brain"<br><span style="opacity: 0.8;">(e.g., Arduino,
+                Cloud)</span></p>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- Slide 4: The Challenge: Home Security -->
+      <section data-background-color="#01404f">
+        <!-- Top: Title & Problem -->
+        <h2 style="color: white; text-align: center; margin-bottom: 10px;">The Challenge: Home Security</h2>
+        <div style="color: white; text-align: center; font-size: 1.1em; padding-top: 10px;">
+          <p>
+            "How do we know if an intruder enters our home when we are away?"
+          </p>
+        </div>
+
+        <!-- Interactive Question Box -->
+        <div class="fragment fade-left"
+          style="background: rgba(255,255,255,0.1); border-left: 5px solid #00A9D4; padding: 15px; margin: 20px auto; width: 80%; text-align: left;">
+          <p style="margin: 0; font-size: 1em; color: white;"><strong>❓ Ask Audience:</strong> "How would <em>you</em>
+            detect an intruder using a sensor?"</p>
+        </div>
+
+        <!-- Center: The Solution Title -->
+        <div style="text-align: center; padding-top: 20px;">
+          <h3 style="color: #00A9D4;">🛡️ Solution: Motion-Activated Alarm</h3>
+        </div>
+
+        <!-- Visual Flow Diagram -->
+        <div style="display: flex; justify-content: center; align-items: center; margin-top: 30px; color: white;">
+
+          <!-- Step 1 -->
+          <div class="fragment fade-left"
+            style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px; width: 150px; text-align: center;">
+            <strong>INPUT</strong><br>
+            <span style="font-size: 0.8em; color: #ddd;">(PIR Sensor)</span>
+          </div>
+
+          <!-- Arrow -->
+          <div class="fragment fade-left" style="margin: 0 10px; font-size: 1.5em; color: #00A9D4;">➡️</div>
+
+          <!-- Step 2 -->
+          <div class="fragment fade-left"
+            style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px; width: 150px; text-align: center;">
+            <strong>PROCESS</strong><br>
+            <span style="font-size: 0.8em; color: #ddd;">(Arduino)</span>
+          </div>
+
+          <!-- Arrow -->
+          <div class="fragment fade-left" style="margin: 0 10px; font-size: 1.5em; color: #00A9D4;">➡️</div>
+
+          <!-- Step 3 -->
+          <div class="fragment fade-left"
+            style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px; width: 150px; text-align: center;">
+            <strong>OUTPUT</strong><br>
+            <span style="font-size: 0.8em; color: #ddd;">(Buzzer/LED)</span>
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+      <!-- Slide 7: Research Questions -->
+      <!-- Slide 5: The Circuit Diagram -->
+      <section data-background-color="#01404f">
+        <h2 style="color: white; text-align: center;">⚡ Our Circuit Blueprint</h2>
+
+        <!-- Placeholder for Tinkercad Image -->
+        <!-- Circuit Diagram Image -->
+        <div style="text-align: center; padding-top: 20px;">
+          <div
+            style="width: 70%; height: auto; background-color: white; margin: 0 auto; padding: 10px; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
+            <img src="img/circuit_diagram.png" alt="Arduino PIR Circuit Diagram"
+              style="max-height: 350px; width: auto; border-radius: 5px;">
+          </div>
+          <p style="font-size: 0.7em; color: #aaa; margin-top: 10px;">(Visual conceptualization of the circuit)</p>
+        </div>
+
+        <!-- Pin Connections Notes -->
+        <div style="color: white; text-align: center; padding-top: 30px; font-size: 1.1em;">
+          <ul style="list-style: none; padding: 0; display: inline-block; text-align: left;">
+            <li>🔌 <strong>Input:</strong> PIR Sensor (Pin 2)</li>
+            <li>💡 <strong>Output:</strong> LED / Buzzer (Pin 13)</li>
+            <li>🕹️ <strong>Controller:</strong> Arduino Uno</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Slide 6: Summary & Next Steps -->
+      <section data-background-color="#01404f">
+        <h2 style="color: white; text-align: center;">📝 Summary & Next Steps</h2>
+
+        <div style="color: white; font-size: 1.2em; padding-top: 40px; width: 85%; margin: 0 auto;">
+          <p class="fragment fade-left">✅ <strong>Re-cap:</strong> We successfully built a logical system:<br>
+            <span style="color: #00A9D4;">Input (Sensor)</span> ➡️ <span style="color: #00A9D4;">Process (Code)</span>
+            ➡️ <span style="color: #00A9D4;">Output (Action)</span>
+          </p>
+
+          <div style="margin-top: 40px;" class="fragment fade-left">
+            <p>👉 <strong>Next Session (Hands-On):</strong></p>
+            <ul style="font-size: 0.9em; line-height: 1.5; margin-left: 40px;">
+              <li><strong>Transition to Lab:</strong> <span style="color: #ffcc00;">(Show Physical Kit via
+                  Camera)</span></li>
+              <li>Wire the circuit using real Arduino kits.</li>
+              <li style="margin-top: 10px; font-style: italic; color: #00A9D4;">"This demonstrates <strong>Hands-On
+                  Pedagogy</strong> - bridging theory to practice."</li>
+            </ul>
+          </div>
+
+          <div style="margin-top: 50px; text-align: center;" class="fragment fade-up">
+            <h3 style="color: #00A9D4;">❓ Any Questions?</h3>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      Reveal.initialize({
+        hash: true,
+        width: 1600,
+        height: 900,
+        slideNumber: true,
+        center: true,
+        transition: 'convex', // Updated transition
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX]
+      });
+
+      // Handle fragment animations
+      Reveal.addEventListener('fragmentshown', function (event) {
+        event.fragment.classList.add('visible');
+      });
+      Reveal.addEventListener('fragmenthidden', function (event) {
+        event.fragment.classList.remove('visible');
+      });
+    </script>
+</body>
+
+</html>
