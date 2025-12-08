@@ -189,8 +189,8 @@
         <!-- Interactive Question Box -->
         <div class="fragment fade-left"
           style="background: rgba(255,255,255,0.1); border-left: 5px solid #00A9D4; padding: 15px; margin: 30px auto; width: 80%; text-align: left;">
-          <p style="margin: 0; font-size: 1em; color: white;"><strong>Ask Audience:</strong> "What IoT devices do you
-            use in your daily life?"</p>
+          <p style="margin: 0; font-size: 1.2em; color: white; text-align: center;">"What IoT devices do you use in your
+            daily life?"</p>
         </div>
 
         <!-- 3 Pillars Layout with Placeholders -->
@@ -251,13 +251,13 @@
         <!-- Interactive Question Box -->
         <div class="fragment fade-left"
           style="background: rgba(255,255,255,0.1); border-left: 5px solid #00A9D4; padding: 15px; margin: 20px auto; width: 80%; text-align: left;">
-          <p style="margin: 0; font-size: 1em; color: white;"><strong>❓ Ask Audience:</strong> "How would <em>you</em>
-            detect an intruder using a sensor?"</p>
+          <p style="margin: 0; font-size: 1.2em; color: white; text-align: center;">"How would <em>you</em> detect an
+            intruder using a sensor?"</p>
         </div>
 
         <!-- Center: The Solution Title -->
         <div style="text-align: center; padding-top: 20px;">
-          <h3 style="color: #00A9D4;">🛡️ Solution: Motion-Activated Alarm</h3>
+          <h3 style="color: #00A9D4;">Solution: Motion-Activated Alarm</h3>
         </div>
 
         <!-- Visual Flow Diagram -->
@@ -265,29 +265,29 @@
 
           <!-- Step 1 -->
           <div class="fragment fade-left"
-            style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px; width: 150px; text-align: center;">
-            <strong>INPUT</strong><br>
-            <span style="font-size: 0.8em; color: #ddd;">(PIR Sensor)</span>
+            style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px; width: 200px; text-align: center;">
+            <strong style="display: block; margin-bottom: 10px;">INPUT</strong>
+            <img src="img/sensor_icon.png" alt="PIR Sensor" style="height: 60px; width: auto; filter: invert(1);">
           </div>
 
           <!-- Arrow -->
-          <div class="fragment fade-left" style="margin: 0 10px; font-size: 1.5em; color: #00A9D4;">➡️</div>
+          <div class="fragment fade-left" style="margin: 0 10px; font-size: 1.5em; color: #00A9D4;">→</div>
 
           <!-- Step 2 -->
           <div class="fragment fade-left"
-            style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px; width: 150px; text-align: center;">
-            <strong>PROCESS</strong><br>
-            <span style="font-size: 0.8em; color: #ddd;">(Arduino)</span>
+            style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px; width: 200px; text-align: center;">
+            <strong style="display: block; margin-bottom: 10px;">PROCESS</strong>
+            <img src="img/processing_icon.jpg" alt="Arduino" style="height: 60px; width: auto; border-radius: 5px;">
           </div>
 
           <!-- Arrow -->
-          <div class="fragment fade-left" style="margin: 0 10px; font-size: 1.5em; color: #00A9D4;">➡️</div>
+          <div class="fragment fade-left" style="margin: 0 10px; font-size: 1.5em; color: #00A9D4;">→</div>
 
           <!-- Step 3 -->
           <div class="fragment fade-left"
-            style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px; width: 150px; text-align: center;">
-            <strong>OUTPUT</strong><br>
-            <span style="font-size: 0.8em; color: #ddd;">(Buzzer/LED)</span>
+            style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 8px; width: 200px; text-align: center;">
+            <strong style="display: block; margin-bottom: 10px;">OUTPUT</strong>
+            <img src="img/led_icon.png" alt="LED" style="height: 60px; width: auto; border-radius: 5px;">
           </div>
 
         </div>
@@ -313,15 +313,17 @@
             <img src="img/circuit_diagram.png" alt="Arduino PIR Circuit Diagram"
               style="max-height: 350px; width: auto; border-radius: 5px;">
           </div>
-          <p style="font-size: 0.7em; color: #aaa; margin-top: 10px;">(Visual conceptualization of the circuit)</p>
+          <p style="font-size: 0.8em; color: #ddd; margin-top: 10px; font-style: italic;">Tinkercad Simulation View</p>
         </div>
 
         <!-- Pin Connections Notes -->
-        <div style="color: white; text-align: center; padding-top: 30px; font-size: 1.1em;">
-          <ul style="list-style: none; padding: 0; display: inline-block; text-align: left;">
-            <li><strong>Input:</strong> PIR Sensor (Pin 2)</li>
-            <li><strong>Output:</strong> LED / Buzzer (Pin 13)</li>
-            <li><strong>Controller:</strong> Arduino Uno</li>
+        <div style="color: white; text-align: center; padding-top: 20px; font-size: 1.1em;">
+          <ul style="list-style: none; padding: 0; display: inline-block; text-align: left; line-height: 1.6;">
+            <li><strong>Input:</strong> &nbsp;&nbsp; PIR Sensor <span style="color: #00A9D4; font-weight: bold;">(Pin
+                2)</span></li>
+            <li><strong>Output:</strong> &nbsp; LED / Buzzer <span style="color: #00A9D4; font-weight: bold;">(Pin
+                13)</span></li>
+            <li><strong>Brain:</strong> &nbsp;&nbsp; Arduino Uno</li>
           </ul>
         </div>
         <aside class="notes">
