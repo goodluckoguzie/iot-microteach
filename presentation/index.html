@@ -139,6 +139,11 @@
             <span style="font-size: 0.75em;">Interview Presentation | December 2025</span>
           </h3>
         </div>
+        <aside class="notes">
+          Good morning panel. Today I'll demonstrate a hands-on IoT session that bridges theory to practice through a
+          motion-detection security system. This is designed for first-year computing students with no prior hardware
+          experience.
+        </aside>
       </section>
 
 
@@ -151,16 +156,17 @@
           <p style="text-align: left; margin-bottom: 30px;">By the end of this session, students will be able to:</p>
           <ol style="line-height: 1.6;">
             <li class="fragment fade-left" style="margin-bottom: 25px;"><strong>Define</strong> the basic concept of
-              Internet of
-              Things (IoT).</li>
+              Internet of Things (IoT).</li>
             <li class="fragment fade-left" style="margin-bottom: 25px;"><strong>Identify</strong> the components of a
-              simple
-              sensor circuit.</li>
+              simple sensor circuit.</li>
             <li class="fragment fade-left" style="margin-bottom: 25px;"><strong>Construct</strong> a motion-detection
-              logic using
-              an Arduino microcontroller.</li>
+              logic using an Arduino microcontroller.</li>
           </ol>
         </div>
+        <aside class="notes">
+          These are measurable outcomes. By the end, students can explain what IoT is, recognize an INPUT vs OUTPUT
+          device, and write basic Arduino logic. Notice I've avoided jargon—accessibility is key.
+        </aside>
       </section>
 
 
@@ -183,7 +189,7 @@
         <!-- Interactive Question Box -->
         <div class="fragment fade-left"
           style="background: rgba(255,255,255,0.1); border-left: 5px solid #00A9D4; padding: 15px; margin: 30px auto; width: 80%; text-align: left;">
-          <p style="margin: 0; font-size: 1em; color: white;"><strong>❓ Ask Audience:</strong> "What IoT devices do you
+          <p style="margin: 0; font-size: 1em; color: white;"><strong>Ask Audience:</strong> "What IoT devices do you
             use in your daily life?"</p>
         </div>
 
@@ -194,7 +200,7 @@
           <div class="fragment fade-left" style="flex: 1;">
             <div
               style="width: 100px; height: 100px; background: rgba(255,255,255,0.15); margin: 0 auto; border: 1px dashed rgba(255,255,255,0.5); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-              <span style="font-size: 0.8em; color: #ddd;">(Img: Sensor)</span>
+              <span style="font-size: 4em;">👁️</span>
             </div>
             <p style="margin-top: 15px; font-weight: bold; color: #00A9D4;">Sensors</p>
             <p style="font-size: 0.8em; line-height: 1.4;">"The Eyes"<br><span style="opacity: 0.8;">(e.g., Motion,
@@ -205,7 +211,7 @@
           <div class="fragment fade-left" style="flex: 1;">
             <div
               style="width: 100px; height: 100px; background: rgba(255,255,255,0.15); margin: 0 auto; border: 1px dashed rgba(255,255,255,0.5); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-              <span style="font-size: 0.8em; color: #ddd;">(Img: Wi-Fi)</span>
+              <span style="font-size: 4em;">📶</span>
             </div>
             <p style="margin-top: 15px; font-weight: bold; color: #00A9D4;">Connectivity</p>
             <p style="font-size: 0.8em; line-height: 1.4;">"The Transport"<br><span style="opacity: 0.8;">(e.g., Wi-Fi,
@@ -216,7 +222,7 @@
           <div class="fragment fade-left" style="flex: 1;">
             <div
               style="width: 100px; height: 100px; background: rgba(255,255,255,0.15); margin: 0 auto; border: 1px dashed rgba(255,255,255,0.5); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-              <span style="font-size: 0.8em; color: #ddd;">(Img: Chip)</span>
+              <span style="font-size: 4em;">🧠</span>
             </div>
             <p style="margin-top: 15px; font-weight: bold; color: #00A9D4;">Processing</p>
             <p style="font-size: 0.8em; line-height: 1.4;">"The Brain"<br><span style="opacity: 0.8;">(e.g., Arduino,
@@ -224,6 +230,11 @@
           </div>
 
         </div>
+        <aside class="notes">
+          Before we dive into the circuit, let's establish the foundation. IoT is simply 'things' that talk to each
+          other via the internet. [ASK QUESTION] Great! Smart speakers, fitness trackers—all IoT. The 3 pillars are:
+          eyes (sensors), transport (wifi), and brain (processing).
+        </aside>
       </section>
 
 
@@ -280,6 +291,10 @@
           </div>
 
         </div>
+        <aside class="notes">
+          [ASK] 'How would you detect an intruder using a sensor?' Excellent—motion! A PIR sensor is perfect. Our system
+          will follow this simple logic: Sensor detects heat → Arduino checks 'motion?' → IF yes, turn on LED alarm.
+        </aside>
       </section>
 
 
@@ -288,7 +303,7 @@
       <!-- Slide 7: Research Questions -->
       <!-- Slide 5: The Circuit Diagram -->
       <section data-background-color="#01404f">
-        <h2 style="color: white; text-align: center;">⚡ Our Circuit Blueprint</h2>
+        <h2 style="color: white; text-align: center;">Our Circuit Blueprint</h2>
 
         <!-- Placeholder for Tinkercad Image -->
         <!-- Circuit Diagram Image -->
@@ -304,25 +319,30 @@
         <!-- Pin Connections Notes -->
         <div style="color: white; text-align: center; padding-top: 30px; font-size: 1.1em;">
           <ul style="list-style: none; padding: 0; display: inline-block; text-align: left;">
-            <li>🔌 <strong>Input:</strong> PIR Sensor (Pin 2)</li>
-            <li>💡 <strong>Output:</strong> LED / Buzzer (Pin 13)</li>
-            <li>🕹️ <strong>Controller:</strong> Arduino Uno</li>
+            <li><strong>Input:</strong> PIR Sensor (Pin 2)</li>
+            <li><strong>Output:</strong> LED / Buzzer (Pin 13)</li>
+            <li><strong>Controller:</strong> Arduino Uno</li>
           </ul>
         </div>
+        <aside class="notes">
+          Here's the blueprint we'll build in Tinkercad. PIR sensor on Pin 2 as INPUT, LED on Pin 13 as OUTPUT. Notice
+          the resistor—that's to protect the LED from burning out. This is what you'll see on your screen during the
+          demo.
+        </aside>
       </section>
 
       <!-- Slide 6: Summary & Next Steps -->
       <section data-background-color="#01404f">
-        <h2 style="color: white; text-align: center;">📝 Summary & Next Steps</h2>
+        <h2 style="color: white; text-align: center;">Summary & Next Steps</h2>
 
         <div style="color: white; font-size: 1.2em; padding-top: 40px; width: 85%; margin: 0 auto;">
-          <p class="fragment fade-left">✅ <strong>Re-cap:</strong> We successfully built a logical system:<br>
-            <span style="color: #00A9D4;">Input (Sensor)</span> ➡️ <span style="color: #00A9D4;">Process (Code)</span>
-            ➡️ <span style="color: #00A9D4;">Output (Action)</span>
+          <p class="fragment fade-left"><strong>Re-cap:</strong> We successfully built a logical system:<br>
+            <span style="color: #00A9D4;">Input (Sensor)</span> → <span style="color: #00A9D4;">Process (Code)</span>
+            → <span style="color: #00A9D4;">Output (Action)</span>
           </p>
 
           <div style="margin-top: 40px;" class="fragment fade-left">
-            <p>👉 <strong>Next Session (Hands-On):</strong></p>
+            <p><strong>Next Session (Hands-On):</strong></p>
             <ul style="font-size: 0.9em; line-height: 1.5; margin-left: 40px;">
               <li><strong>Transition to Lab:</strong> <span style="color: #ffcc00;">(Show Physical Kit via
                   Camera)</span></li>
@@ -333,9 +353,14 @@
           </div>
 
           <div style="margin-top: 50px; text-align: center;" class="fragment fade-up">
-            <h3 style="color: #00A9D4;">❓ Any Questions?</h3>
+            <h3 style="color: #00A9D4;">Any Questions?</h3>
           </div>
         </div>
+        <aside class="notes">
+          So we've proven the logic works in simulation. But students need to touch real hardware—that's Hands-On
+          Pedagogy. [SWITCH TO CAMERA] Here's the physical Arduino and PIR sensor. In our next lab, you'll wire this
+          yourself and learn about sensor calibration—things the simulator hides.
+        </aside>
       </section>
     </div>
 
