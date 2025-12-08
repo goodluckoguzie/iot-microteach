@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Micro-Teach: Smart Home Security</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/blood.min.css">
+
+    <style>
+        .reveal h1,
+        .reveal h2,
+        .reveal h3 {
+            text-transform: none;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .col {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .code-box {
+            background: #2c3e50;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .component-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin: 10px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Slide 1: Title -->
+            <section>
+                <h3>Introduction to IoT</h3>
+                <h1>Building a Smart Security System</h1>
+                <p>
+                    <small>Presented by <span class="highlight">Your Name</span></small>
+                </p>
+                <p style="font-size: 0.6em; opacity: 0.7;">Micro-Teach Demonstration</p>
+            </section>
+
+            <!-- Slide 2: Objectives -->
+            <section>
+                <h2>Learning Objectives</h2>
+                <p>By the end of this session, you will be able to:</p>
+                <ul>
+                    <li class="fragment fade-up">Understand the basic logic of a <span class="highlight">Motion
+                            Sensor</span>.</li>
+                    <li class="fragment fade-up">Build a simple <strong>Input/Output circuit</strong> using an Arduino.
+                    </li>
+                    <li class="fragment fade-up">Apply this knowledge to create a "Smart Home" prototype.</li>
+                </ul>
+            </section>
+
+            <!-- Slide 3: What is IoT? -->
+            <section>
+                <h2>What is IoT?</h2>
+                <h3>(Internet of Things)</h3>
+                <div class="container">
+                    <div class="col">
+                        <div style="font-size: 3em;">🌐</div>
+                        <p><strong>Internet</strong><br>Connectivity & Data</p>
+                    </div>
+                    <div class="col" style="font-size: 2em;">+</div>
+                    <div class="col">
+                        <div style="font-size: 3em;">💡</div>
+                        <p><strong>Things</strong><br>Physical Devices</p>
+                    </div>
+                </div>
+                <p class="fragment">Connecting the physical world to the digital world.</p>
+            </section>
+
+            <!-- Slide 4: Scenario -->
+            <section>
+                <h2>The Scenario</h2>
+                <div
+                    style="text-align: left; background: rgba(0,0,0,0.3); padding: 30px; border-left: 5px solid #e74c3c;">
+                    <p><strong>🔒 Problem:</strong> We want to secure a room against intruders.</p>
+                    <p class="fragment"><strong>✅ Solution:</strong> A system that detects <em>motion</em> and triggers
+                        a <em>visible alarm</em>.</p>
+                </div>
+                <br>
+                <p class="fragment"><strong>The Logic:</strong><br> <code>IF Motion == Detected THEN Light = ON</code>
+                </p>
+            </section>
+
+            <!-- Slide 5: The Build -->
+            <section>
+                <h2>The Build</h2>
+                <div class="container">
+                    <div class="col">
+                        <h4>Components</h4>
+                        <div class="component-card">🧠 Arduino Uno</div>
+                        <div class="component-card">👀 PIR Sensor (Input)</div>
+                        <div class="component-card">🚨 LED Light (Output)</div>
+                    </div>
+                    <div class="col">
+                        <div class="code-box">
+                            <pre><code data-trim data-noescape>
+void loop() {
+  int status = digitalRead(sensorPin);
+  
+  if (status == HIGH) {
+    digitalWrite(ledPin, HIGH);
+  } else {
+    digitalWrite(ledPin, LOW);
+  }
+}
+                                </code></pre>
+                        </div>
+                    </div>
+                </div>
+                <p class="fragment highlight">Let's go to Tinkercad!</p>
+            </section>
+
+            <!-- Slide 6: Summary & Next Steps -->
+            <section>
+                <h2>Summary & Next Steps</h2>
+                <ul>
+                    <li>We simulated a <strong>Sensor-to-Actuator</strong> flow.</li>
+                    <li>We wrote logic using C++ (Arduino).</li>
+                </ul>
+                <hr>
+                <h3>Next Session: PROTOTYPING</h3>
+                <p>We will take this simulation and build it with <strong>Real Hardware</strong>.</p>
+                <div class="container">
+                    <div class="col fragment">
+                        <span style="font-size: 2em;">👉</span><br>Hands-On Practice
+                    </div>
+                    <div class="col fragment">
+                        <span style="font-size: 2em;">🔧</span><br>Safety Protocols
+                    </div>
+                </div>
+            </section>
+
+            <!-- Thank You -->
+            <section>
+                <h1>Thank You</h1>
+                <p>Any Questions?</p>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            center: true,
+            transition: 'convex' // none/fade/slide/convex/concave/zoom
+        });
+    </script>
+</body>
+
+</html>

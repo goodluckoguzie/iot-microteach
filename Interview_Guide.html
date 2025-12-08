@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Preparation Guide</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; color: #333; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h2 { color: #e67e22; margin-top: 30px; }
+        h3 { color: #2980b9; }
+        ul { background: #f9f9f9; padding: 20px 40px; border-radius: 5px; }
+        li { margin-bottom: 10px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 3px; }
+        .quote { border-left: 4px solid #ccc; padding-left: 15px; font-style: italic; color: #555; }
+        .highlight { background-color: #e8f4fc; padding: 15px; border-radius: 5px; border-left: 5px solid #2980b9; }
+    </style>
+</head>
+<body>
+
+    <h1>Interview Preparation Guide</h1>
+    <p>Based on the detailed review of the transcript, here is the <strong>comprehensive</strong> guide. It covers the specific technical comparisons and logistical constraints your manager mentioned.</p>
+
+    <h2>Part 1: Micro-Teach (15 Minutes Total)</h2>
+    <p><strong>Topic:</strong> Internet of Things (IoT)<br>
+    <strong>Key Constraint:</strong> Maximum 5-6 Slides. Most time spent on <strong>Practical Demo</strong>.</p>
+
+    <h3>Slide Outline (Max 6 Slides)</h3>
+    <ol>
+        <li><strong>Title Slide:</strong> Topic (Introduction to IoT), Your Name.</li>
+        <li><strong>Learning Objectives:</strong> By the end of this session, students will be able to... (e.g., understand basic sensor logic, build a simple circuit).</li>
+        <li><strong>What is IoT?:</strong> Very brief definition (Connecting physical devices to the internet).</li>
+        <li><strong>The Scenario/Problem:</strong> "Imagine we want to build a Smart Home Security System..." (Sets the context for the demo).</li>
+        <li><strong>The Solution (Circuit Diagram):</strong> Simple visual of what you will build (Motion Sensor + LED/Alarm).</li>
+        <li><strong>Summary/Next Steps:</strong> Slide to show <em>after</em> the demo.</li>
+    </ol>
+
+    <h3>Practical Demo Strategy (The Core)</h3>
+    <p><strong>Tool:</strong> Tinkercad (Online).<br>
+    <strong>Technique:</strong> "Think Aloud" & "Interactive Questioning" (Don't just talk <em>at</em> them).</p>
+
+    <div class="highlight">
+        <h4>Scripted Flow:</h4>
+        <ol>
+            <li><strong>Launch Tinkercad:</strong> Share screen.</li>
+            <li><strong>Engagement Question:</strong> "If we want to detect a burglar entering a room, what kind of sensor do you think we need?" (Wait for answer: "Motion sensor/PIR").</li>
+            <li><strong>Action:</strong> Drag the PIR sensor. <em>Say: "Correct! I'm dragging the PIR sensor here..."</em></li>
+            <li><strong>Engagement Question:</strong> "Great, the sensor sees movement. But how do <em>we</em> know it saw something? What output device should we use?" (Wait: "Light/Buzzer").</li>
+            <li><strong>Action:</strong> Drag an LED. <em>Say: "Excellent choice. Let's wire this LED to pin 13..."</em></li>
+            <li><strong>Coding:</strong> Quickly show the block logic: <code>IF motion == HIGH, THEN turn LED ON</code>.</li>
+            <li><strong>Run Simulation:</strong> Click Start. Wiggle the mouse to trigger motion. LED lights up.</li>
+            <li><strong>Closing the Demo:</strong> "As you can see, we've simulated a logic flow in minutes."</li>
+        </ol>
+    </div>
+
+    <h3>The "Physical Transition" (Crucial Step)</h3>
+    <p><em>Your manager emphasized this heavily: bridge the gap between simulation and reality.</em></p>
+    <div class="quote">
+        <p>"So, we just demonstrated this on Tinkercad. It is fantastic for safety and simulation. However, I believe in a <strong>hands-on pedagogy</strong>.</p>
+        <p><em>(Hold up Physical Raspberry Pi/Arduino & Sensor to camera)</em></p>
+        <p>"In a real session, my next step is to have students build this physically. Simulation prevents fear of hardware, but physical building provides the real skill. We would use safety kits and grounding straps, and I would guide them to translate their code to this board."</p>
+    </div>
+
+    <hr>
+
+    <h2>Part 2: Technical & Teaching Q&A</h2>
+
+    <h3>Q1: The Technical Question (Raspberry Pi vs. Arduino)</h3>
+    <p><em>The interviewer will roleplay as a student: "Which one should I use? What is the difference?"</em></p>
+    <ul>
+        <li><strong>Arduino:</strong> Is a <em>Microcontroller</em>. It is best for simple, repetitive tasks (like reading a sensor and turning on a light) and low power consumption. It’s 'Real-time'.</li>
+        <li><strong>Raspberry Pi:</strong> Is a full <em>Mini-Computer</em> (Microprocessor). It runs an Operating System (Linux). You use it when you need complex processing, cameras, internet browsing, or running Python scripts that manage databases.</li>
+        <li><strong>Recommendation:</strong> For our motion sensor project, Arduino is sufficient. If you wanted to <em>facial recognize</em> the burglar, we would need the Raspberry Pi.</li>
+    </ul>
+
+    <h3>Q2: Teaching Experience & Challenges</h3>
+    <ul>
+        <li><strong>Co-Delivery & Teamwork:</strong>
+            <p><em>Question:</em> "How do you handle marking inconsistencies in a team?"<br>
+            <em>Answer:</em> "I prioritize <strong>Standardization</strong>. Before we start marking, the team should mark one 'sample' paper together to agree on the standard. If I find a discrepancy later, I pause and call for a moderation meeting to ensure fairness to the students."</p>
+        </li>
+        <li><strong>Mistakes:</strong>
+            <p><em>Prompt:</em> "Tell us about a mistake you made."<br>
+            <em>Strategy:</em> Admit the mistake (e.g., "I once released grades late"), but focus 80% of the answer on the <strong>System</strong> you built to prevent it happening again (e.g., "I now use a personal tracker/checklist").</p>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>Part 3: Lab Technician - The "Birmingham Scenario"</h2>
+
+    <h3>Q3: Inventory Management (The "No Inventory" Problem)</h3>
+    <p><strong>The Context:</strong> There is currently NO inventory. Nobody knows what we have.</p>
+    <div class="highlight">
+        <strong>The Solution:</strong>
+        <ol>
+            <li><strong>Immediate Audit:</strong> "My first week task is a full physical audit. Categorize items: Working, Damaged/Repairable, E-Waste."</li>
+            <li><strong>The System:</strong> "I will implement a digital tracking system (Start with Excel/SharePoint, advise moving to Barcode/Asset Tags). It must track: Item ID, Current Location, Borrower."</li>
+            <li><strong>The "Independent" Process:</strong> "I know I won't always be in the lab. I might be teaching. The system must run without me. I will create 'Sign-out/Sign-in' forms (QR codes on cabinets linked to a Form) so lecturers can log usage themselves."</li>
+        </ol>
+    </div>
+
+    <h3>Q4: The "Shared Room" Constraint (QAHE Specifics)</h3>
+    <p><em>Your manager noted: QAHE doesn't have "Dedicated Labs". Normal classrooms become labs.</em></p>
+    <p><strong>Question:</strong> "How do you manage expensive kit in shared rooms?"</p>
+    <p><strong>Answer:</strong> "I understand QAHE maximizes room usage. Since these are shared spaces:</p>
+    <ul>
+        <li><strong>Storage:</strong> Secure cabinets are key. I will work with <strong>Facilities</strong> to ensure locks work.</li>
+        <li><strong>Scheduling:</strong> I will work with the <strong>Scheduling Team</strong> to ensure practical modules are booked into the rooms containing the correct cabinets (so lecturers don't have to carry kit between rooms, increasing damage risk).</li>
+        <li><strong>Culture:</strong> I will train lecturers to 'count in/count out' devices at the start and end of every class."</li>
+    </ul>
+
+    <h3>Q5: The Training Project (Cisco/Networking Labs)</h3>
+    <p><strong>Scenario:</strong> You need to train staff/students on new Cisco Routers/Racks.<br>
+    <strong>Approach (ADDIE model):</strong></p>
+    <ol>
+        <li><strong>Needs Analysis:</strong> "I'll survey Lecturers & the Associate Dean. Who needs this? What is their current skill level? Are they scared of the kit?"</li>
+        <li><strong>Design:</strong> "I will blend materials. <strong>Packet Tracer</strong> for concept practice, but <strong>Physical Workshops</strong> for the 'fear factor'. I'll include a specific <strong>Safety Module</strong> (grounding straps, handling rackmounts)."</li>
+        <li><strong>Implement:</strong> "Run pilot sessions with key staff first."</li>
+        <li><strong>Evaluate:</strong> "The job isn't done at delivery. I will send a survey <strong>4 weeks later</strong>: 'Are you using the labs? If not, why?' This ensures the training actually worked."</li>
+    </ol>
+
+</body>
+</html>
